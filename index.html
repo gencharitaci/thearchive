@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mecklenburg County GIS portal for open data and open source software.">
+    <meta name="author" content="Tobin Bradley">
+    <title>The Archive - Mecklenburg County GIS</title>
+
+    <!-- icon and theme stuff -->
+    <link rel="icon" href="img/logo.png" type="image/png"><!-- 32×32 -->
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png"><!-- 180×180 -->
+    <meta name="theme-color" content="#2A4365"/>
+    <link rel="manifest" href="manifest.json">
+
+    <!-- preconnect to the font file's domain -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- preload performance -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap">
+    <link rel="preload" href="./img/logo.svg" as="image">
+
+    <!-- fonts -->
+    <link media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+
+  </head>
+  <body class="gradient flex flex-col h-screen overflow-hidden">
+    <div class="flex flex-col h-screen overflow-hidden">
+
+      <!--Nav-->
+      <nav id="header" class="w-full text-white">
+        <div class="w-full mx-auto flex flex-wrap items-center justify-between mt-0 py-1">
+          <div class="pl-1 flex items-center">
+            <img src="img/logo.svg" alt="open mapping logo" class="w-7 h-7 lg:w-10 lg:h-10" style="filter: brightness(0) invert(1);">
+            <div>
+              <h1 class="text-2xl font-bold lg:text-3xl ml-1 -mt-1"> <a href="./">The Archive</a></h1>
+              <h2 class="text-sm font-semibold ml-2 leading-none">Historic Scans &#x2022; Mecklenburg County GIS</h2>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- main content -->
+      <main class="text-black grow flex flex-col md:flex-row overflow-hidden">
+        <aside id="tabstrip" class="p-1 flex flex-col md:w-72"></aside>
+        <div id="viewer" class="grow pb-1 pr-1 relative"></div>
+      </main>
+
+    </div>
+
+    <!-- service worker dialog -->
+    <dialog
+      id="sw-dialog"
+      class="bg-primaryPurple text-white px-3 py-2 rounded-r-md border-l-2 border-white shadow-lg"
+    >
+      <div class="flex place-items-center">
+        <div class="flex-1 pr-8 text-lg">
+          History has been updated!
+        </div>
+        <div>
+          <button
+            class="px-4 py-2 border-2 border-white outline-none rounded bg-white text-primaryPurple hover:border-pink-400 font-bold transition-colors duration-300"
+            onclick="window.location.reload()"
+          >
+            Reload
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <script type="module" src="/src/main.js"></script>
+
+  </body>
+</html>

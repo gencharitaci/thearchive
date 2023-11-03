@@ -1,0 +1,79 @@
+/* Write your global styles here, in PostCSS syntax */
+
+@tailwind base;
+
+
+:root {
+  @apply font-sans;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 1em;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+select, input {
+  @apply text-sm rounded-md px-1 py-2 bg-neutral-200 text-left outline-none border border-transparent transition-colors duration-300 focus:border-primaryTeal focus:ring-transparent;
+}
+
+input::placeholder {
+  @apply text-neutral-500;
+}
+
+.gradient {
+  background: linear-gradient(45deg, #d53369 0%, #ef3e3d 50%, #daae51 100%);
+  @apply text-white;
+}
+
+* {
+  scrollbar-width: thin;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255,255,255,0.8);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-500;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-700;
+}
+
+
+#sw-dialog::backdrop {
+  backdrop-filter: blur(3px);
+}
+#sw-dialog[open] {
+  animation: show-dialog 1s ease normal;
+}
+@keyframes show-dialog {
+  from {
+    opacity: 0;
+    transform: translateY(-110%);
+
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+
+@tailwind components;
+@tailwind utilities;
