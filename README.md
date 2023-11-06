@@ -16,25 +16,25 @@ Leaflet is being used as a non-spatial image viewer - the images are not spatial
 
 [Node.js](https://nodejs.org/en) is required to run the development and build systems, and [git](https://git-scm.com/) is required to use the versioning system.
 
-**Clone the project**
+### Clone the project
 ```bash
 git clone https://github.com/tobinbradley/thearchive.git
 ```
 
-**Install dependencies**
+### Install dependencies
 ```bash
 cd thearchive
 npm install
 ```
 
-**Start the development server**
+### Start the development server
 ```bash
 npm run dev
 ```
 
 Navigate a web browser to [http://localhost:3000](http://localhost:3000) to view the HMR live development server.
 
-**Build for production**
+### Build for production
 ```bash
 npm run build
 ```
