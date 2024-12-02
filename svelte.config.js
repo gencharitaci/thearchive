@@ -1,11 +1,12 @@
-import preprocess from "svelte-preprocess"
+// import preprocess from "svelte-preprocess" (@deprecated )
+import { sveltePreprocess } from "svelte-preprocess";
 
 const config = {
   preprocess: [
-    preprocess({
-      postcss: true
-    })
-  ]
-}
+    sveltePreprocess({
+      postcss: true, // Enables PostCSS processing
+    }),
+  ],
+};
 
-export default config
+export default config;
