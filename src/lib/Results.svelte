@@ -22,7 +22,7 @@
 
    <!-- show drop down for small screens -->
     <div class="md:hidden bg-white rounded-b-md mr-1 p-2">
-      <label for="mapselector" class="block text-center text-sm font-bold">Maps</label>
+      <label id="map-selector" for="mapselector" class="block text-center text-sm font-bold">Maps</label>
       <select
         bind:value={$image}
         id="mapselector"
@@ -33,4 +33,5 @@
         {/each}
       </select>
     </div>
+    
 {/if}

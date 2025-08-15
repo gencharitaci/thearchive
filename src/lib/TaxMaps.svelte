@@ -13,7 +13,7 @@
 
   // book.subscribe((value) => {
   //   fetch(
-  //     `https://maps.mecknc.gov/api/v1/query/scans?columns=distinct(page)%20as%20page&filter=scantype='taxmap and book='${value}'&sort=page&limit=1000`
+  //     `https://gis.mecklenburgcountync.gov/dirt/api/v1/query/scans?columns=distinct(page)%20as%20page&filter=scantype='taxmap and book='${value}'&sort=page&limit=1000`
   //   )
   //     .then((response) => response.json())
   //     .then((json) => {
@@ -21,7 +21,7 @@
   //       const checkPages = json.map((el) => el.page);
   //       if (!checkPages.includes($page)) $page = pages[0].page;
   //       updateRecords(
-  //         `https://maps.mecknc.gov/api/v1/query/scans?columns=year,book,page,file&filter=scantype='taxmap' and book='${value}' and page='${$page}'&sort=book%2C%20CASE%20WHEN%20page%20~%20'%5E%5Ba-zA-Z%5D'%20THEN%201%20WHEN%20page%20~%20'%5E%5B0-9%5D'%20THEN%202%20END,year&limit=2000`
+  //         `https://gis.mecklenburgcountync.gov/dirt/api/v1/query/scans?columns=year,book,page,file&filter=scantype='taxmap' and book='${value}' and page='${$page}'&sort=book%2C%20CASE%20WHEN%20page%20~%20'%5E%5Ba-zA-Z%5D'%20THEN%201%20WHEN%20page%20~%20'%5E%5B0-9%5D'%20THEN%202%20END,year&limit=2000`
   //       );
   //     });
   // });
@@ -31,7 +31,7 @@
     if (value) {
       // Ensure value exists before fetching pages
       fetch(
-        `https://maps.mecknc.gov/api/v1/query/scans?columns=distinct(page)%20as%20page&filter=scantype='taxmap' and book='${value}'&sort=page&limit=1000`
+        `https://gis.mecklenburgcountync.gov/dirt/api/v1/query/scans?columns=distinct(page)%20as%20page&filter=scantype='taxmap' and book='${value}'&sort=page&limit=1000`
       )
         .then((response) => response.json())
         .then((json) => {
@@ -39,7 +39,7 @@
           const checkPages = json.map((el) => el.page);
           if (!checkPages.includes($page)) $page = pages[0].page;
           updateRecords(
-            `https://maps.mecknc.gov/api/v1/query/scans?columns=year,book,page,file&filter=scantype='taxmap' and book='${value}' and page='${$page}'&sort=book%2C%20CASE%20WHEN%20page%20~%20'%5E%5Ba-zA-Z%5D'%20THEN%201%20WHEN%20page%20~%20'%5E%5B0-9%5D'%20THEN%202%20END,year&limit=2000`
+            `https://gis.mecklenburgcountync.gov/dirt/api/v1/query/scans?columns=year,book,page,file&filter=scantype='taxmap' and book='${value}' and page='${$page}'&sort=book%2C%20CASE%20WHEN%20page%20~%20'%5E%5Ba-zA-Z%5D'%20THEN%201%20WHEN%20page%20~%20'%5E%5B0-9%5D'%20THEN%202%20END,year&limit=2000`
           );
         })
         .catch((error) => {
@@ -54,7 +54,7 @@
   page.subscribe((value) => {
     if (value === "") return; // If no page is selected, do nothing
     updateRecords(
-      `https://maps.mecknc.gov/api/v1/query/scans?columns=year,book,page,file&filter=scantype='taxmap' and book='${$book}' and page='${value}'&sort=book%2C%20CASE%20WHEN%20page%20~%20'%5E%5Ba-zA-Z%5D'%20THEN%201%20WHEN%20page%20~%20'%5E%5B0-9%5D'%20THEN%202%20END,year&limit=2000`
+      `https://gis.mecklenburgcountync.gov/dirt/api/v1/query/scans?columns=year,book,page,file&filter=scantype='taxmap' and book='${$book}' and page='${value}'&sort=book%2C%20CASE%20WHEN%20page%20~%20'%5E%5Ba-zA-Z%5D'%20THEN%201%20WHEN%20page%20~%20'%5E%5B0-9%5D'%20THEN%202%20END,year&limit=2000`
     );
   });
 
@@ -76,7 +76,7 @@
 
   // fetch books
   fetch(
-    "https://maps.mecknc.gov/api/v1/query/scans?columns=distinct(book)%20as%20book&filter=scantype='taxmap'&sort=book&limit=1000"
+    "https://gis.mecklenburgcountync.gov/dirt/api/v1/query/scans?columns=distinct(book)%20as%20book&filter=scantype='taxmap'&sort=book&limit=1000"
   )
     .then((response) => response.json())
     .then((json) => {

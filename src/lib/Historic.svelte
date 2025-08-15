@@ -2,7 +2,7 @@
   import Results from './Results.svelte'
 
   let filterString = ''
-  let promise = fetch("https://maps.mecknc.gov/api/v1/query/scans?columns=file&filter=scantype='historic'").then((x) => x.json())
+  let promise = fetch("https://gis.mecklenburgcountync.gov/dirt/api/v1/query/scans?columns=file&filter=scantype='historic'").then((x) => x.json())
 
   function filter(data, str) {
     const searchStr = str.trim().toUpperCase()
@@ -20,7 +20,14 @@
 </script>
 
 <div class="mr-1 p-4 text-center bg-white">
-  <input placeholder="Title search" class="w-full" type="text" bind:value={filterString}>
+  <input 
+  id="title-search-historic"
+  name="addressSearchHistoric"
+  placeholder="Title search" 
+  class="w-full" 
+  type="text" 
+  bind:value={filterString}
+  >
 </div>
 
 {#await promise}

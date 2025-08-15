@@ -18,7 +18,7 @@ function jsonToURL(obj) {
 
 // set store to selected value
 function handleHit(event) {
-  fetch(`https://maps.mecknc.gov/api/v1/query/scans?columns=year,book,page,file&filter=scantype='taxmap' and book='${event.detail.groundpid.substring(0,3)}' and page='${event.detail.groundpid.substring(3,5)}'&limit=1`)
+  fetch(`https://gis.mecklenburgcountync.gov/dirt/api/v1/query/scans?columns=year,book,page,file&filter=scantype='taxmap' and book='${event.detail.groundpid.substring(0,3)}' and page='${event.detail.groundpid.substring(3,5)}'&limit=1`)
   .then(response => response.json())
   .then(json => {
     if (json.length === 1) {
@@ -44,7 +44,7 @@ async function handleQuery(event) {
     limit: 8,
     filter: `ts @@ to_tsquery('addressing_en', '${queryString.toUpperCase().replace(/ /g, '&') + ':*'}') and cde_status='A' and the_geom is not null`
   }
-  urls.push(`https://maps.mecknc.gov/api/v1/query/master_address_table?${jsonToURL(addressArg)}`)
+  urls.push(`https://gis.mecklenburgcountync.gov/dirt/api/v1/query/master_address_table?${jsonToURL(addressArg)}`)
 
 
 

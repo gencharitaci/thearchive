@@ -70,7 +70,7 @@
     if ($tab === "historic") {
       console.log("historic");
       fetch(
-        `https://maps.mecknc.gov/api/v1/query/scans?filter=file='${$image}'`
+        `https://gis.mecklenburgcountync.gov/dirt/api/v1/query/scans?filter=file='${$image}'`
       )
         .then((response) => response.json())
         .then((json) => {

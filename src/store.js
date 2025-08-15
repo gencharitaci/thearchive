@@ -3,7 +3,7 @@ import { writable, readable } from "svelte/store"
 // Handle nav events
 let browserNav = false
 
-export const imgBaseUrl = readable('https://maps.mecknc.gov/scans/')
+export const imgBaseUrl = readable('https://gis.mecklenburgcountync.gov/scans/')
 export let tab = writable('')
 export let image = writable('')
 
@@ -11,7 +11,7 @@ function readHash() {
   const arg = window.location.hash.replace("#", "")
   if (arg.length > 1) {
     fetch(
-      `https://maps.mecknc.gov/api/v1/query/scans?columns=scantype,file&filter=file='${arg}'`
+      `https://gis.mecklenburgcountync.gov/dirt/api/v1/query/scans?columns=scantype,file&filter=file='${arg}'`
     )
       .then((response) => response.json())
       .then((json) => {

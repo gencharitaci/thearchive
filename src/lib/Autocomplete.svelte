@@ -105,13 +105,14 @@
 
 <div class="relative mt-4">
   <input
+    id="tax-map-search-via-address"
     class="w-full block"
     type="text"
     aria-label="find Tax Map via address"
     onfocus="this.select()"
     {name}
     {placeholder}
-    autocomplete={name}
+    autocomplete={"autocomplete-results"}
     bind:value={search}
     on:input={(event) => onChange(event)}
     on:keydown={(event) => onKeyDown(event)}

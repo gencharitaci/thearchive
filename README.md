@@ -2,7 +2,7 @@
 
 Mecklenburg County historic scans viewer, built with [Svelte](https://svelte.dev/), [TailwindCSS](https://tailwindcss.com/), and [Leaflet](https://leafletjs.com/). The development and build environment is [Vite](https://vitejs.dev/).
 
-Site: [https://maps.mecknc.gov/thearchive](https://maps.mecknc.gov/thearchive)
+Site: [https://gis.mecklenburgcountync.gov/thearchive](https://gis.mecklenburgcountync.gov/thearchive)
 
 ## Architecture
 
@@ -18,7 +18,7 @@ Leaflet is being used as a non-spatial image viewer - the images are not spatial
 
 ### Clone the project
 ```bash
-git clone https://github.com/tobinbradley/thearchive.git
+git clone https://github.com/gencharitaci/thearchive.git
 ```
 
 ### Install dependencies
